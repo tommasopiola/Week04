@@ -1,5 +1,10 @@
-from employee import Employee
-from super_manager import SuperManager
+from company.employee import Employee
+from company.super_manager import SuperManager
+
+import flet
+
+from miaclasse import MiaClasse
+
 print(55)
 print("abc")
 print(True)
@@ -34,3 +39,26 @@ lista = [55, "abc", True, l, e, s]
 
 for oggetto in lista:
     print(oggetto)
+
+
+# USO DELLA CLASSE MiaClasse CREATA CON IL DECORATORE @dataclass
+
+mia1 = MiaClasse(100, "Ciao") # DUE PARAMETRI
+mia2 = MiaClasse(50, "Hello")
+lista = []
+lista.append(mia1)
+lista.append(mia2)
+
+print("\nLista di oggetti MiaClasse prima dell'ordinamento")
+for o in lista:
+    print(o) # STAMPABILE, GRAZIE AL METODO __repr__() DEFINITO DAL DECORATORE
+
+sorted(lista) # ORDINABILE USANDO I METODI DI CONFRONTO DEFINITI DA @dataclass
+
+print("\nLista di oggetti MiaClasse prima dell'ordinamento")
+for o in lista:
+    print(o)
+
+
+
+

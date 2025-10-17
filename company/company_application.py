@@ -1,5 +1,8 @@
+import operator
+
 from employee import Employee
 from manager import Manager
+from operator import attrgetter
 
 e1 = Employee("M. Rossi", 20000)
 
@@ -33,3 +36,20 @@ if eA == eB:
     print("Sono uguali")
 else:
     print("Sono diversi")
+
+print("\nLista odinata")
+
+# Come ordinare una lista di Employee definendo metodi __eq__() e __lt__()
+
+sortedList = sorted(employees)
+
+# Come ordinare una lista di Employee con operator
+
+sortedList = sorted(employees, key=operator.attrgetter("wage")) # ESEMPIO PER PAGA
+
+# Come ordinare una lista di Employee con lambda expression
+
+sortedList = sorted(employees, key=lambda emp: emp.wage)
+
+for emp in sortedList:
+    print(emp)

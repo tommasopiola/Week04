@@ -30,5 +30,26 @@ class Employee:
         self._wage += 5000
 
     def __eq__(self, other):
-        # ALGORITMO DI CONFRONTO
-        return self.name == other.name and self.wage == other.wage
+        # MIO ALGORITMO DI CONFRONTO
+        return self.name == other.name # and self.wage == other.wage
+
+    def __lt__(self, other):
+        # MIO ALGORITMO DI ORDINAMENTO
+        return self.name < other.name
+
+
+# Se voglio mantenere del codice, es. di debug, all'interno
+# del mio modulo posso farlo, ma devo evitare che
+# il codice venga eseguito ANCHE quando il modulo
+# viene importato. Posso farlo controllando __name__
+
+if __name__ == "__main__":
+    e = Employee("Prova",10000)
+    print(e)
+    e.increment_wage()
+    print(e)
+
+
+
+
+

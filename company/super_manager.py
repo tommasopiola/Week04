@@ -1,4 +1,4 @@
-from manager import Manager
+from company.manager import Manager
 
 class SuperManager(Manager):
     def __init__(self, name, wage, managedUnit):
